@@ -12,7 +12,7 @@ exports.create = async(req, res) => {
 
 exports.read = async(req, res) => {
     const produto = await Produto.read();
-    res.status(200).send(Produto)
+    res.status(200).send(produto)
 }
 
 exports.update = async(req, res) => {

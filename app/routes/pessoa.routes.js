@@ -12,7 +12,7 @@ module.exports = app => {
         .delete(pessoaController.delete)
         .get(pessoaController.readById)
 
-    app.route('/pedido')
+    app.route('/produto')
         .post(produtoController.create)
         .get(produtoController.read)
 
