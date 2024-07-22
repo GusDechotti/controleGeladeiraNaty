@@ -3,29 +3,29 @@ module.exports = app => {
     const produtoController = require('../controllers/produto.controller');
     const pedidoController = require('../controllers/pedido.controller');
 
-    app.route('/pessoa')
+    app.route('/api/pessoa')
         .post(pessoaController.create)
         .get(pessoaController.read)
 
-    app.route('/pessoa/:id')
+    app.route('/api/pessoa/:id')
         .put(pessoaController.update)
         .delete(pessoaController.delete)
         .get(pessoaController.readById)
 
-    app.route('/produto')
+    app.route('/api/produto')
         .post(produtoController.create)
         .get(produtoController.read)
 
-    app.route('/produto/:id')
+    app.route('/api/produto/:id')
         .put(produtoController.update)
         .delete(produtoController.delete)
         .get(produtoController.readById)
 
-    app.route('/pedido')
+    app.route('/api/pedido')
         .post(pedidoController.create)
         .get(pedidoController.read)
 
-    app.route('/pedido/:id')
+    app.route('/api/pedido/:id')
         .put(pedidoController.update)
         .delete(pedidoController.delete)
         .get(pedidoController.readById)
