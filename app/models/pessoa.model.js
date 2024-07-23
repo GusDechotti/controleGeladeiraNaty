@@ -3,7 +3,7 @@ const pool = require('../../config/database');
 exports.create = async (date) => {
   const connection = await pool.getConnection();
   try {
-    const [rows] = await connection.query(`INSERT INTO Pessoa (nome, telefone, isNaty) VALUES (?, ?, ?)`, [date.nome, date.telefone, data.isNaty]);
+    const [rows] = await connection.query(`INSERT INTO Pessoa (nome, telefone, isNaty) VALUES (?, ?, ?)`, [date.nome, date.telefone, date.isNaty]);
     return rows.affectedRows;
   } finally {
     connection.release();

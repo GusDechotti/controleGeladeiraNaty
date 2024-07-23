@@ -12,6 +12,8 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended : true }))
 app.use(bodyParser.json());
 
+app.use(cors());
+
 /* Configure cors */
 app.set('secret', 'api-nodejs');
 

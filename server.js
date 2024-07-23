@@ -6,18 +6,18 @@ const porta = 3001;
 
 var port = process.env.PORT || 3000;
 
-// Servir arquivos estáticos da pasta 'public'
+// Roda o front
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Rota principal que serve o arquivo index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(porta, () => {
-    console.log(`Servidor rodando em http://localhost:${porta}`);
-  });
-    
+    console.log(`Frontend rodando em http://localhost:${porta}`);
+});
+
+//Backend
 backend.listen(port, function(){
-    console.log('Server ON in Port ' + port);
+    console.log('Backend rodando na porta ' + port);
 })
