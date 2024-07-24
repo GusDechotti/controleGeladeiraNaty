@@ -43,7 +43,7 @@ async function addBtnProduto() {
                         return response.json();
                     })
                     .then(data => {
-                        const newUrl = `confirmaCompra.html`;
+                        const newUrl = `/html/confirmaCompra.html`;
                         window.location.href = newUrl;
                     })
                     .catch(error => {

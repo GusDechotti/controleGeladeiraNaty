@@ -12,7 +12,7 @@ async function adicionaBtnPessoa() {
       button.setAttribute('nome', item.nome);
       button.textContent = item.nome;
       button.addEventListener('click', () => {
-        const newUrl = `produto.html?id=${item.id}`;
+        const newUrl = `/html/produto.html?id=${item.id}`;
         window.location.href = newUrl;
       });
       container.appendChild(button);
@@ -21,4 +21,10 @@ async function adicionaBtnPessoa() {
     console.error('Ocorreu um erro:', error);
   }
 }
+
+function pgCriar(){
+  const newUrl = `/html/cadastrarPessoa.html`;
+  window.location.href = newUrl;
+}
+
 adicionaBtnPessoa();

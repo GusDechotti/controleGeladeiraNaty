@@ -11,9 +11,9 @@ exports.create = async (date) => {
     const pessoaNome = rows[0].nome;
     const axios = require('axios');
 
-    const url = 'https://api.beta.naty.app/api/v2/campaigns';
+    const url = 'https://api.beta.naty.app/api/v2/campaigns/instantly';
     const data = {
-      "name": "Campanha Teste Dechotti",
+      "name": "Teste envio geladeira",
       "whatsappId": "44c248fa-a49f-4c5e-9871-99f46e3341f9",
       "ticketStatus": "closed",
       "messages": [
@@ -24,7 +24,7 @@ exports.create = async (date) => {
         }
       ]
     };
-    const token = /*TOKEN DA NATY*/;
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkOmNhbXBhaWducyIsIm1hbmFnZTpjYW1wYWlnbnMiLCJjcmVhdGU6bWVzc2FnZXMiLCJjcmVhdGU6bWVkaWFzIiwicmVhZDp3aGF0c2FwcHMiLCJ1cGRhdGU6d2hhdHNhcHBzIiwicmVhZDpxdWV1ZXMiLCJyZWFkOnVzZXJzIl0sImNvbXBhbnlJZCI6ImZmNDUzYmU5LTkyYzctNGVlZS1iNjE1LThmMTg5MDEzMTg0YSIsImlhdCI6MTcwNjE4MTM2Nn0.HrCeYP2zKSGMaePB2JX0va_ml1RjWIf-gKP6YU2I4M0';
     axios.post(url, data, {
       headers: {
         'Content-Type': 'application/json',
