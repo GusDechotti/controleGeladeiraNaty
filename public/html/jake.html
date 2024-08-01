@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cadastrarProduto(){
+            const newUrl = `/html/cadastrarProduto.html`;
+            window.location.href = newUrl;
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="isPix" id="isPix">
+    <label for="isPix">Exibir os pagos pelo pix</label>
+    <input type="checkbox" name="isNaty" id="isNaty">
+    <label for="isNaty">Exibir os patrocinados pela Naty</label>
+    <button>Aplicar filtros</button>
+    <button onclick="cadastrarProduto()">Cadastrar novo produto</button>
+</body>
+</html>

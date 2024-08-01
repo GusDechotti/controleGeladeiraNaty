@@ -27,4 +27,9 @@ function pgCriar(){
   window.location.href = newUrl;
 }
 
+function paginaJake(){
+  const newUrl = `/html/jake.html`;
+  window.location.href = newUrl;
+}
+
 adicionaBtnPessoa();

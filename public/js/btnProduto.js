@@ -71,7 +71,9 @@ async function addBtnProduto() {
                         console.error('Erro:', error);
                     });
             });
-            container.appendChild(btn);
+            if(item.quantidade >= 0){
+                container.appendChild(btn);   
+            }
         });
     } catch (error) {
         console.error('Ocorreu um erro:', error);
