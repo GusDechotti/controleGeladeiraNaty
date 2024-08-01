@@ -24,12 +24,33 @@ async function addBtnProduto() {
             btn.appendChild(text);
             btn.createElement
             btn.addEventListener('click', () => {
-                const url = 'http://localhost:3000/api/pedido';
+                const urlPostBanco = 'http://localhost:3000/api/pedido';
+                const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty';
                 const data = {
                     "id_pessoa": getQueryParam("id"),
                     "id_produto": item.id
                 };
-                fetch(url, {
+                fetch(urlPostBanco, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro na requisição');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const newUrl = `/html/confirmaCompra.html`;
+                        window.location.href = newUrl;
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                    });
+                fetch(urlMandarMensagem, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

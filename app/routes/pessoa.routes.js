@@ -2,6 +2,7 @@ module.exports = app => {
     const pessoaController = require('../controllers/pessoa.controller');
     const produtoController = require('../controllers/produto.controller');
     const pedidoController = require('../controllers/pedido.controller');
+    const disparoController = require(`../controllers/disparo.controller`);
 
     app.route('/api/pessoa')
         .post(pessoaController.create)
@@ -29,4 +30,7 @@ module.exports = app => {
         .put(pedidoController.update)
         .delete(pedidoController.delete)
         .get(pedidoController.readById)
+
+    app.route('/api/disparoNaty')
+        .post(disparoController.post)
 }
