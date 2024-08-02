@@ -3,13 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        function cadastrarProduto(){
-            const newUrl = `/html/cadastrarProduto.html`;
-            window.location.href = newUrl;
-        }
-    </script>
+    <title>Painel da Jake</title>
 </head>
 <body>
     <input type="checkbox" name="isPix" id="isPix">
@@ -17,6 +11,18 @@
     <input type="checkbox" name="isNaty" id="isNaty">
     <label for="isNaty">Exibir os patrocinados pela Naty</label>
     <button>Aplicar filtros</button>
-    <button onclick="cadastrarProduto()">Cadastrar novo produto</button>
+    <button onclick="cadastrarProduto()">Cadastrar novo produto</button><br>
+    <table border="1" id="tabela-container">
+        <thead>
+            <tr>
+                <th>Nome da Pessoa</th>
+                <th>Nome do Produto</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="/js/jake.js"></script>
 </body>
 </html>

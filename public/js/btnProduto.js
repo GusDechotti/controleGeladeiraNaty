@@ -5,6 +5,9 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
+var isNaty = document.getElementById("click");
+console.log(isNaty);
+
 async function addBtnProduto() {
     try {
         const response = await fetch(apiUrl);
@@ -28,7 +31,8 @@ async function addBtnProduto() {
                 const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty';
                 const data = {
                     "id_pessoa": getQueryParam("id"),
-                    "id_produto": item.id
+                    "id_produto": item.id,
+                    "isPix": isNaty.checked
                 };
                 fetch(urlPostBanco, {
                     method: 'POST',

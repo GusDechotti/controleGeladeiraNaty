@@ -22,6 +22,9 @@ module.exports = app => {
         .delete(produtoController.delete)
         .get(produtoController.readById)
 
+    app.route('/api/pedidos')
+        .get(pedidoController.readAll)
+
     app.route('/api/pedido')
         .post(pedidoController.create)
         .get(pedidoController.read)
