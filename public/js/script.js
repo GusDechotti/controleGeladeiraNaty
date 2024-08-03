@@ -4,7 +4,7 @@ async function adicionaBtnPessoa() {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
-
+    console.log(data)
     const container = document.getElementById('button-container');
 
     data.forEach(item => {

@@ -5,8 +5,9 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
-var isNaty = document.getElementById("click");
-console.log(isNaty);
+var Pix = document.getElementById("isPix");
+var isPix = Pix.checked;    
+console.log(isPix)
 
 async function addBtnProduto() {
     try {
@@ -32,7 +33,7 @@ async function addBtnProduto() {
                 const data = {
                     "id_pessoa": getQueryParam("id"),
                     "id_produto": item.id,
-                    "isPix": isNaty.checked
+                    "isPix": isPix.checked
                 };
                 fetch(urlPostBanco, {
                     method: 'POST',

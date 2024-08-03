@@ -11,7 +11,7 @@ exports.post = async (req, res) => {
     const [rowsProduto] = await connection.query('SELECT * FROM Produto WHERE id = ?', [req.body.id_produto]);
     console.log(rowsProduto)
     const produtoNome = rowsProduto[0].nome;
-    const url = 'https://api.beta.naty.app/api/v2/campaigns';
+    const url = 'https://api.beta.naty.app/api/v2/campaigns/instantly';
     const data = {
         "name": "Teste envio geladeira",
         "whatsappId": "44c248fa-a49f-4c5e-9871-99f46e3341f9",
