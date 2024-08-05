@@ -60,3 +60,13 @@ exports.readAll = async() => {
     connection.release();
   }
 };
+
+exports.deleteAll = async () => {
+  const connection = await pool.getConnection();
+  try {
+    const [rows] = await connection.query(`TRUNCATE TABLE Pedido`);
+    return rows;
+  } finally {
+    connection.release();
+  }
+};

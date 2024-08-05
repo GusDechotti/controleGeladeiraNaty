@@ -8,6 +8,9 @@ module.exports = app => {
         .post(pessoaController.create)
         .get(pessoaController.read)
 
+    app.route('/api/pessoas/detalhes')
+        .get(pessoaController.readDetalhe)
+
     app.route('/api/pessoa/:id')
         .put(pessoaController.update)
         .delete(pessoaController.delete)
@@ -33,6 +36,9 @@ module.exports = app => {
         .put(pedidoController.update)
         .delete(pedidoController.delete)
         .get(pedidoController.readById)
+
+    app.route('/api/pedidos/deleteAll')
+        .delete(pedidoController.deleteAll)
 
     app.route('/api/disparoNaty')
         .post(disparoController.post)

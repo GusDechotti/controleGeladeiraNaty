@@ -49,3 +49,13 @@ exports.readById = async (id) => {
     connection.release();
   }
 };
+
+exports.readDetalhe = async () => {
+  const connection = await pool.getConnection();
+  try {
+    const [rows] = await connection.query(`SELECT Pessoa.Id, Pessoa.nome, COUNT(Pedido.id) AS total_pedidos FROM Pessoa LEFT JOIN Pedido ON Pessoa.id = Pedido.id_pessoa GROUP BY Pessoa.id, Pessoa.nome`);
+    return rows;
+  } finally {
+    connection.release();
+  }
+};

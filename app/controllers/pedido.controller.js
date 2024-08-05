@@ -45,3 +45,8 @@ exports.readAll = async(req, res) => {
     const pedido = await Pedido.readAll();
     res.status(200).send(pedido)
 }
+
+exports.deleteAll = async (req, res) => {
+    const pedido = await Pedido.deleteAll();
+    res.status(200).send(pedido)
+}
