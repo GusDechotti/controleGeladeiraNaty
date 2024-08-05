@@ -14,14 +14,23 @@
     <label for="isNaty">Exibir os patrocinados pela Naty</label>
     <button>Aplicar filtros</button>
     <button onclick="cadastrarProduto()">Cadastrar novo produto</button><br>
+    <p>Todos os pedidos:</p>
     <table border="1" id="tabela-container">
         <tr>
             <th>Nome da Pessoa</th>
             <th>Nome do Produto</th>
         </tr>
     </table>
-
+    <button onclick="limpar()">Limpar histórico</button>
     <script src="/js/jake.js"></script>
+    <br><br>
+    <p>Pedidos por pessoa:</p>
+    <table border="1" id="media">
+        <tr>
+            <th>Nome da pessoa</th>
+            <th>Quantidade de pedidos</th>
+        </tr>
+    </table>
 </body>
 
 </html>
