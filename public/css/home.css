@@ -1,0 +1,66 @@
+/* styles.css */
+
+/* Reseta alguns estilos padrões */
+body, h2, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    background-color: #000000;
+    color: #6243E9;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#button-container {
+    margin-bottom: 220px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #6243E9;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    img {
+        max-width: 80px;
+    }
+}
