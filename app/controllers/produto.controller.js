@@ -40,3 +40,8 @@ exports.readById = async(req, res) => {
     const produto = await Produto.readById(req.params.id)
     res.status(200).send(produto)
 }
+
+exports.readAll = async (req,res) => {
+    const produto = await Produto.realAll()
+    res.status(200).send(produto)
+}
