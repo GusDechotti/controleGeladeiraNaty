@@ -1,0 +1,84 @@
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo para inputs de checkbox e seus labels */
+input[type="checkbox"] {
+    margin: 15px 10px 15px 0;
+    cursor: pointer;
+}
+
+label {
+    font-size: 16px;
+    color: #ffffff;
+    margin-right: 20px;
+}
+
+/* Estilo para botões */
+button {
+    background-color: #6243E9;
+    ;
+    color: white;
+    padding: 10px 20px;
+    margin: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #ff0000;
+}
+
+/* Estilo para parágrafos */
+p {
+    font-size: 18px;
+    margin: 20px 0 10px;
+    color: #ffffff;
+}
+
+/* Estilo para tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #6243E9;
+    color: white;
+}
+
+tr:hover {
+    background-color: #451df4;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
