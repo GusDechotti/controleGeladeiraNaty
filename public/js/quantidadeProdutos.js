@@ -12,19 +12,25 @@ async function addBtnProduto() {
             const img = document.createElement('img');
             const ipt = document.createElement('input');
             const btn = document.createElement('button');
-            ipt.id = item.id;
-            ipt.placeholder = 'Adicione o novo valor'
-            ipt.type = 'number'
+            const form = document.createElement('form');
+            form.id = item.id;
+            ipt.id = item.id + `id`;
+            ipt.placeholder = 'Adicione o novo valor';
+            ipt.type = 'number';
             btn.textContent = 'Adicionar';
+            btn.type = 'submit';
             img.src = item.imagem;
             img.alt = item.nome;
             img.style.width = '100px';
             img.style.height = '100px';
             var text = document.createTextNode(item.nome);
+            var qtd = document.createTextNode(`Quantidade atual: ${item.quantidade}`);
+            form.appendChild(ipt);
+            form.appendChild(btn);
             div.appendChild(img);
             div.appendChild(text);
-            div.appendChild(ipt);
-            div.appendChild(btn);
+            div.appendChild(form);
+            div.appendChild(qtd);
             div.style = 'border:solid'
             btn.addEventListener('click', () => {
                 atualizaApi(item.id)
@@ -39,27 +45,40 @@ async function addBtnProduto() {
 }
 
 async function atualizaApi(id){
-    const data = {
-        "quantidade":document.getElementById(id)
-    }
-    console.log(data)
-    try {
-        const response = await fetch('http://localhost:3000/api/produto', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
+    const url = 'http://localhost:3000/api/produto/'+ id;
+    document.getElementById(id).addEventListener('submit', function(event) {
+        const formData = {
+          quantidade: document.getElementById(id + `id`).value  
+        };
+      
+        fetch(url, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        console.log(body)
+        console.log(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao enviar dados');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Sucesso:', data);
+        })
+        .catch(error => {
+          console.error('Erro:', error);
         });
-
-        if (response.ok) {
-            const result = await response.json();
-            window.alert("Produto atualizado com sucesso");
-        } else {
-            console.error('Erro:', response.statusText);
-        }
-    } catch (error) {
-        console.error('Erro de conexão:', error);
-    }
+      });
+      
 }
+
+function voltar(){
+    const newUrl = `/`;
+    window.location.href = newUrl;
+}
+
 addBtnProduto();
