@@ -5,8 +5,7 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
-var Pix = document.getElementById("isPix");
-var isPix = Pix.checked;    
+   
 console.log(isPix)
 
 async function addBtnProduto() {
@@ -27,14 +26,17 @@ async function addBtnProduto() {
             btn.appendChild(img);
             btn.appendChild(text);
             btn.createElement
+            var Pix = document.getElementById("isPix");
+            var isPix = Pix.checked; 
             btn.addEventListener('click', () => {
                 const urlPostBanco = 'http://localhost:3000/api/pedido';
                 const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty';
                 const data = {
                     "id_pessoa": getQueryParam("id"),
                     "id_produto": item.id,
-                    "isPix": isPix.checked
+                    "isPix": isPix
                 };
+                console.log(data)
                 fetch(urlPostBanco, {
                     method: 'POST',
                     headers: {
