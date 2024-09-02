@@ -3,7 +3,7 @@ const pool = require('../../config/database');
 exports.create = async (date) => {
   const connection = await pool.getConnection();
   try {
-    const [result] = await connection.query(`INSERT INTO Pedido (id_produto, id_pessoa) VALUES (?, ?)`, [date.id_produto, date.id_pessoa]);
+    const [result] = await connection.query(`INSERT INTO Pedido (id_produto, id_pessoa, isPix) VALUES (?, ?, ?)`, [date.id_produto, date.id_pessoa, date.isPix]);
     connection.query(`UPDATE Produto SET quantidade = quantidade - 1 WHERE id = ?`, [date.id_produto])
     return result.insertId;
   } finally {
