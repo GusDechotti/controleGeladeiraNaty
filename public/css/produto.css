@@ -36,7 +36,7 @@ label[for="isPix"] {
 /* Exemplo de botão para o produto */
 #btnProduto button {
     background-color:#6243E9;
-    ;
+    margin-left: 15px;
     color: white;
     padding: 15px 20px;
     border: none;

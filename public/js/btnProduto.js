@@ -18,12 +18,14 @@ async function addBtnProduto() {
         data.forEach(item => {
             const btn = document.createElement('button');
             var img = document.createElement('img');
+            var br = document.createElement('br');
             img.src = item.imagem;
             img.alt = item.nome;
             img.style.width = '100px';
             img.style.height = '100px';
             var text = document.createTextNode(item.nome);
             btn.appendChild(img);
+            btn.appendChild(br);
             btn.appendChild(text);
             btn.createElement
             var Pix = document.getElementById("isPix");
