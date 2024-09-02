@@ -29,14 +29,16 @@ async function addBtnProduto() {
             btn.appendChild(text);
             btn.createElement
             var Pix = document.getElementById("isPix");
-            var isPix = Pix.checked; 
+            Pix.addEventListener('change', function() {
+                console.log('Checkbox foi clicado! Estado atual:', Pix.checked);
+              });
             btn.addEventListener('click', () => {
                 const urlPostBanco = 'http://localhost:3000/api/pedido';
                 const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty';
                 const data = {
                     "id_pessoa": getQueryParam("id"),
                     "id_produto": item.id,
-                    "isPix": isPix
+                    "isPix": Pix.checked
                 };
                 console.log(data)
                 fetch(urlPostBanco, {
