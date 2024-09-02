@@ -13,7 +13,7 @@ exports.create = async (date) => {
   }
 };
 
-exports.read = async () => {
+exports.readAll = async () => {
   const connection = await pool.getConnection();
   try {
     const [rows] = await connection.query(`SELECT * FROM Produto`);
@@ -23,10 +23,20 @@ exports.read = async () => {
   }
 };
 
+exports.read = async () => {
+  const connection = await pool.getConnection();
+  try{
+    const [rows] = await connection.query('SELECT * FROM Produto WHERE quantidade > 0');
+    return rows;
+  } finally{
+    connection.release();
+  }
+}
+
 exports.update = async (id, date) => {
   const connection = await pool.getConnection();
   try {
-    const [rows] = await connection.query(`UPDATE Produto SET nome = ? WHERE id = ?`, [date[0].nome, id]);
+    const [rows] = await connection.query(`UPDATE Produto SET quantidade = ? WHERE id = ?`, [date.quantidade, id]);
     return rows.affectedRows;
   } finally {
     connection.release();

@@ -3,6 +3,11 @@ function cadastrarProduto() {
   window.location.href = newUrl;
 }
 
+function alterarQuantidade(){
+  const newUrl = `/html/quantidadeProdutos.html`;
+  window.location.href = newUrl;
+}
+
 var Pix = document.getElementById("isPix");
 var isPix = Pix.checked;
 

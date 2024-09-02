@@ -4,6 +4,7 @@ module.exports = app => {
     const pedidoController = require('../controllers/pedido.controller');
     const disparoController = require(`../controllers/disparo.controller`);
 
+    //Pessoas
     app.route('/api/pessoa')
         .post(pessoaController.create)
         .get(pessoaController.read)
@@ -16,6 +17,7 @@ module.exports = app => {
         .delete(pessoaController.delete)
         .get(pessoaController.readById)
 
+    //Produtos
     app.route('/api/produto')
         .post(produtoController.create)
         .get(produtoController.read)
@@ -25,6 +27,10 @@ module.exports = app => {
         .delete(produtoController.delete)
         .get(produtoController.readById)
 
+    app.route('/api/produtos/todos')
+        .get(produtoController.readAll)
+
+    //Pedidos
     app.route('/api/pedidos')
         .get(pedidoController.readAll)
 
@@ -40,6 +46,7 @@ module.exports = app => {
     app.route('/api/pedidos/deleteAll')
         .delete(pedidoController.deleteAll)
 
+    //Disparos Naty
     app.route('/api/disparoNaty')
         .post(disparoController.post)
 }
