@@ -34,7 +34,11 @@ async function addBtnProduto() {
               });
             btn.addEventListener('click', () => {
                 const urlPostBanco = 'http://localhost:3000/api/pedido';
-                const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty';
+                if(Pix.checked){
+                    var urlMandarMensagem = 'http://localhost:3000/api/disparoNaty/pix';
+                }else{
+                    var urlMandarMensagem = 'http://localhost:3000/api/disparoNaty/padrao'
+                }
                 const data = {
                     "id_pessoa": getQueryParam("id"),
                     "id_produto": item.id,

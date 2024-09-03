@@ -47,6 +47,9 @@ module.exports = app => {
         .delete(pedidoController.deleteAll)
 
     //Disparos Naty
-    app.route('/api/disparoNaty')
-        .post(disparoController.post)
+    app.route('/api/disparoNaty/padrao')
+        .post(disparoController.compra)
+    
+    app.route('/api/disparoNaty/pix')
+        .post(disparoController.compraPix)
 }
