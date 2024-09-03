@@ -37,6 +37,9 @@ async function exibePedidos() {
         tdPix.textContent = ``;
       }
       onde.appendChild(tdPix);
+      const tdData = document.createElement('td');
+      tdData.textContent = new Date(item.dia).toLocaleDateString('pt-BR');
+      onde.appendChild(tdData);
     });
   } catch (error) {
     console.error('Ocorreu um erro:', error);
@@ -50,15 +53,15 @@ async function exibePedidos() {
       console.log(item)
 
       const tr = document.createElement('tr');
-      tr.setAttribute('id', item.Id + 'pessoa')
-      container.appendChild(tr);
-      const tdNome = document.createElement('td');
-      tdNome.textContent = item.nome
-      const lugar = document.getElementById(item.Id + 'pessoa')
-      lugar.appendChild(tdNome)
+      tr.setAttribute('id', item.Id + 'pessoa');
+      container.appendChild(tr);;
+      const tdNome = document.createElement('td');;
+      tdNome.textContent = item.nome;
+      const lugar = document.getElementById(item.Id + 'pessoa');
+      lugar.appendChild(tdNome);
       const tdProduto = document.createElement('td');
-      tdProduto.textContent = item.total_pedidos
-      lugar.appendChild(tdProduto)
+      tdProduto.textContent = item.total_pedidos;
+      lugar.appendChild(tdProduto);
     });
   } catch (error) {
     console.error('Ocorreu um erro:', error);

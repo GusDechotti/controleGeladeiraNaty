@@ -14,7 +14,7 @@ exports.create = async (date) => {
 exports.read = async () => {
   const connection = await pool.getConnection();
   try {
-    const [rows] = await connection.query(`SELECT pedido.id as pedidoId, isPix, pessoa.id as idPessoa, pessoa.nome as nomePessoa, produto.id as produtoId, produto.nome as nomeProduto FROM pedido JOIN pessoa ON pedido.id_pessoa = pessoa.id JOIN produto ON pedido.id_produto = produto.id;`);
+    const [rows] = await connection.query(`SELECT pedido.id as pedidoId, isPix, dia, pessoa.id as idPessoa, pessoa.nome as nomePessoa, produto.id as produtoId, produto.nome as nomeProduto FROM pedido JOIN pessoa ON pedido.id_pessoa = pessoa.id JOIN produto ON pedido.id_produto = produto.id;`);
     return rows;
   } finally {
     connection.release();
