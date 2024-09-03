@@ -30,6 +30,13 @@ async function exibePedidos() {
       const tdProduto = document.createElement('td');
       tdProduto.textContent = item.nomeProduto
       onde.appendChild(tdProduto)
+      const tdPix = document.createElement('td');
+      if(item.isPix){
+        tdPix.textContent = `X`;
+      }else{
+        tdPix.textContent = ``;
+      }
+      onde.appendChild(tdPix);
     });
   } catch (error) {
     console.error('Ocorreu um erro:', error);

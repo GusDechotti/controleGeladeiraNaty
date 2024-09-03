@@ -18,23 +18,27 @@ async function addBtnProduto() {
         data.forEach(item => {
             const btn = document.createElement('button');
             var img = document.createElement('img');
+            var br = document.createElement('br');
             img.src = item.imagem;
             img.alt = item.nome;
             img.style.width = '100px';
             img.style.height = '100px';
             var text = document.createTextNode(item.nome);
             btn.appendChild(img);
+            btn.appendChild(br);
             btn.appendChild(text);
             btn.createElement
             var Pix = document.getElementById("isPix");
-            var isPix = Pix.checked; 
+            Pix.addEventListener('change', function() {
+                console.log('Checkbox foi clicado! Estado atual:', Pix.checked);
+              });
             btn.addEventListener('click', () => {
                 const urlPostBanco = 'http://localhost:3000/api/pedido';
                 const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty';
                 const data = {
                     "id_pessoa": getQueryParam("id"),
                     "id_produto": item.id,
-                    "isPix": isPix
+                    "isPix": Pix.checked
                 };
                 console.log(data)
                 fetch(urlPostBanco, {

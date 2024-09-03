@@ -11,9 +11,9 @@ exports.post = async (req, res) => {
     const [rowsProduto] = await connection.query('SELECT * FROM Produto WHERE id = ?', [req.body.id_produto]);
     console.log(rowsProduto)
     const produtoNome = rowsProduto[0].nome;
-    const url = 'https://api.beta.naty.app/api/v2/campaigns/instantly';
+    const url = 'https://api.staging.naty.app/api/v2/campaigns/instantly';
     const data = {
-        "name": "Teste envio geladeira",
+        "name": "Compra na geladeira",
         "whatsappId": "44c248fa-a49f-4c5e-9871-99f46e3341f9",
         "ticketStatus": "closed",
         "messages": [
@@ -24,7 +24,7 @@ exports.post = async (req, res) => {
             }
         ]
     };
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkOmNhbXBhaWducyIsIm1hbmFnZTpjYW1wYWlnbnMiLCJjcmVhdGU6bWVzc2FnZXMiLCJjcmVhdGU6bWVkaWFzIiwicmVhZDp3aGF0c2FwcHMiLCJ1cGRhdGU6d2hhdHNhcHBzIiwicmVhZDpxdWV1ZXMiLCJyZWFkOnVzZXJzIl0sImNvbXBhbnlJZCI6ImZmNDUzYmU5LTkyYzctNGVlZS1iNjE1LThmMTg5MDEzMTg0YSIsImlhdCI6MTcwNjE4MTM2Nn0.HrCeYP2zKSGMaePB2JX0va_ml1RjWIf-gKP6YU2I4M0';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJjcmVhdGU6bWVzc2FnZXMiLCJjcmVhdGU6bWVkaWFzIiwicmVhZDp3aGF0c2FwcHMiLCJ1cGRhdGU6d2hhdHNhcHBzIiwicmVhZDpjYW1wYWlnbnMiLCJtYW5hZ2U6Y2FtcGFpZ25zIiwicmVhZDpjaGFubmVscyIsInJlYWQ6cXVldWVzIiwicmVhZDp1c2VycyJdLCJjb21wYW55SWQiOiJmZjQ1M2JlOS05MmM3LTRlZWUtYjYxNS04ZjE4OTAxMzE4NGEiLCJpYXQiOjE3MjUzMDkxNjZ9.wawDXjc4WaZyMLLtq9Of4p7s8cI3uiMMZrbDq5Z7X_0';
     axios.post(url, data, {
         headers: {
             'Content-Type': 'application/json',
