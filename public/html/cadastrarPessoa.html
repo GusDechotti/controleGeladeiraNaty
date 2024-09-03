@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Pessoa</title>
     <link rel="icon" type="image/x-icon" href="https://beta.naty.app/static/media/naty-icon.f531dada323cbd4a921c.png">
+    <link rel="stylesheet" href="/css/cadastrarPessoa.css">
 </head>
 <body>
     <form id="campos">
+        <label for="nome"><h1>Cadastro</h1></label><br>
         <label for="nome">Digite seu nome:</label><br>
-        <input type="text" id="nome" name="nome"><br>
+        <input required type="text" id="nome" name="nome"><br>
         <label for="telefone">Digite seu telefone como no padrão abaixo:</label><br>
-        <input type="text" id="telefone" placeholder="554521037110" name="telefone" maxlength="13" minlength="11"><br>
+        <input required type="text" id="telefone" placeholder="554521037110" name="telefone" maxlength="13" minlength="11"><br>
         <label for="isNaty">Trabalha na Naty</label>
         <input type="checkbox" name="isNaty" id="isNaty"><br>   
         <input type="submit" value="Adicionar" id="submit">
