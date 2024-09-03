@@ -80,7 +80,7 @@ async function limpar() {
       console.error('Ocorreu um erro:', error);
     } finally {
       window.alert("Limpo com sucesso!")
-      window.reload()
     }
   }
+  location.reload();
 }
