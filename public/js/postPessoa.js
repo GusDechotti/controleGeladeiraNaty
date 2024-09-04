@@ -1,4 +1,4 @@
-document.getElementById('campos').addEventListener('submit', async function (event) {
+document.getElementById('cadastroForm').addEventListener('submit', async function (event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     if(formData.get("isNaty")=='on'){
