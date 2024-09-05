@@ -1,6 +1,7 @@
 body{
     padding: 0;
     margin: 0;
+    height: 100dvh;
     background-color: #8C52FF;
     display: flex;
     justify-content: center;
@@ -11,9 +12,9 @@ body{
     
 }
 .logo{
-    width: 500px;
-    margin-top: 50px;
-    
+    width: 30%;
+    align-items: center;
+    margin: 20px 70px 20px 20px;
 }
 .texto{
     flex: 2;
@@ -33,7 +34,6 @@ body{
     border-radius: 40px;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1); /* sombra leve */
     padding: 100px 250px 100px 250px;
-    margin-top: 20px;
     background-color: #834cef;
     justify-content: center;
     align-items: center;
