@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eba</title>
-    <link rel="icon" type="image/x-icon" href="https://beta.naty.app/static/media/naty-icon.f531dada323cbd4a921c.png">
+    <title>Confirmação</title>
+    <link rel="stylesheet" href="../css/telaFinalCompra.css">
     <script>
         function voltar(){
             const newUrl = `/`;
@@ -13,9 +13,21 @@
     </script>
 </head>
 <body>
-    <h1>COMPRA FEITA!!!!!!!!!!!!</h1><br>
-    <h2>aproveite</h2>
-    <p>mensagem enviada para o whatsapp pela Naty</p>
-    <button onclick="voltar()">Voltar</button>
+    <div class="divConteiner">
+        <div class="logo">
+            <img src="../src/natyPersonaLogo.png" width="350px" alt="">
+        </div>
+        <div class="texto">
+            <div class="divStyle">
+                <h1>
+                    Obrigado pela compra!!!
+                </h1>
+                <h2>
+                    Verifique o seu WhatsApp
+                </h2>
+                <button class="button, efeito" onclick="voltar()">Voltar</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
