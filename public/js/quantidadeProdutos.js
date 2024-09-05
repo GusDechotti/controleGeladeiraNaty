@@ -13,6 +13,9 @@ async function addBtnProduto() {
             const ipt = document.createElement('input');
             const btn = document.createElement('button');
             const form = document.createElement('form');
+            const divUm = document.createElement('div');            
+            const divDois = document.createElement('div');      
+            const divQuantidade = document.createElement('div');     
             form.id = item.id;
             ipt.id = item.id + `id`;
             ipt.placeholder = 'Adicione o novo valor';
@@ -21,16 +24,17 @@ async function addBtnProduto() {
             btn.type = 'submit';
             img.src = item.imagem;
             img.alt = item.nome;
-            img.style.width = '100px';
+            img.style.width = 'auto';
             img.style.height = '100px';
             var text = document.createTextNode(item.nome);
             var qtd = document.createTextNode(`Quantidade atual: ${item.quantidade}`);
             form.appendChild(ipt);
             form.appendChild(btn);
-            div.appendChild(img);
-            div.appendChild(text);
-            div.appendChild(form);
-            div.appendChild(qtd);
+            divUm.className = 'divUm';
+            divDois.className = 'divDois';
+            divUm.appendChild(img);
+            divDois.append(text, form, qtd);
+            div.append(divUm, divDois);
             div.style = 'border:solid'
             btn.addEventListener('click', () => {
                 atualizaApi(item.id)

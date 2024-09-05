@@ -88,9 +88,20 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 .efeito:hover {
     transform: scale(1.2);
+}
+
+.checkboxForm {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    /* Aumenta o tamanho em 1.5 vezes */
 }

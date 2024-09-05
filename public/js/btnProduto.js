@@ -21,7 +21,7 @@ async function addBtnProduto() {
             var br = document.createElement('br');
             img.src = item.imagem;
             img.alt = item.nome;
-            img.style.width = '100px';
+            img.style.width = 'auto';
             img.style.height = '100px';
             var text = document.createTextNode(item.nome);
             btn.appendChild(img);
@@ -31,7 +31,7 @@ async function addBtnProduto() {
             var Pix = document.getElementById("isPix");
             Pix.addEventListener('change', function() {
                 console.log('Checkbox foi clicado! Estado atual:', Pix.checked);
-              });
+            });
             btn.addEventListener('click', () => {
                 const urlPostBanco = 'http://localhost:3000/api/pedido';
                 if(Pix.checked){

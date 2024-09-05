@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(247, 247, 247);
+    
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+}
+input{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+button{
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-color: rgb(14, 255, 163);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+.buttonDiv{
+    font-size: x-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100px;
+}
+div{
+    border-radius: 10px;
+    width: 375px;
+    background-color: #7242d2;
+    border: none;
+    margin: 0px 10px 0px 0px;
+    display: flex;
+    flex-direction: row;
+}
+.divUm{
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.divDois{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: space-evenly;
+}
+
+text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+    margin: 10px;
+}
+
+footer{
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.efeito {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #7242d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.efeito:hover {
+    transform: scale(1.2);
+}

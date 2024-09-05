@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #6243E9;
     color: #c2c2c2;
     text-align: center;
 }
@@ -12,7 +12,7 @@ body {
 h2 {
     margin-top: 20px;
     font-size: 24px;
-    color: #6243E9;
+    color: #f8f8f8;
 }
 
 /* Checkbox e label */
@@ -35,10 +35,10 @@ label[for="isPix"] {
 
 /* Exemplo de botão para o produto */
 #btnProduto button {
-    background-color:#6243E9;
+    background-color:#ebeaf3;
     margin-left: 15px;
     margin-bottom: 15px;
-    color: white;
+    color: #6243E9;
     padding: 15px 20px;
     border: none;
     border-radius: 5px;
@@ -47,7 +47,7 @@ label[for="isPix"] {
 }
 
 #btnProduto button:hover {
-    background-color: #6243E9;
+    background-color: #49f3c0;
 }
 
 /* Responsividade */
@@ -130,7 +130,7 @@ label[for="isPix"] {
   }
   
   .checkbox-wrapper-4 .cbx:hover span:first-child {
-    border-color: #07f;
+    border-color: rgb(67, 253, 228);
   }
   
   .checkbox-wrapper-4 .inp-cbx {
@@ -139,7 +139,7 @@ label[for="isPix"] {
   }
   
   .checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child {
-    background: #07f;
+    background: rgb(29, 241, 195);
     border-color: #07f;
     animation: wave-4 0.4s ease;
   }
