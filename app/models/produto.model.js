@@ -16,7 +16,7 @@ exports.create = async (date) => {
 exports.readAll = async () => {
   const connection = await pool.getConnection();
   try {
-    const [rows] = await connection.query(`SELECT * FROM Produto`);
+    const [rows] = await connection.query(`SELECT * FROM Produto ORDER BY nome`);
     return rows;
   } finally {
     connection.release();
@@ -26,7 +26,7 @@ exports.readAll = async () => {
 exports.read = async () => {
   const connection = await pool.getConnection();
   try{
-    const [rows] = await connection.query('SELECT * FROM Produto WHERE quantidade > 0');
+    const [rows] = await connection.query('SELECT * FROM Produto WHERE quantidade > 0 ORDER BY nome');
     return rows;
   } finally{
     connection.release();
