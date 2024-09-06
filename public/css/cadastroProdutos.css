@@ -22,29 +22,22 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: x-large;
+    font-size: 3dvh;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-style: oblique;
-    
+    color: white;    
 }
 .divStyle{
     display: flex;
     flex-direction: column;
-    border-radius: 40px;
+    border-radius: 5px;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1); /* sombra leve */
-    padding: 100px 250px 100px 250px;
-    background-color: #834cef;
+    height: 70dvh;
+    width: 100dvh;
     justify-content: center;
     align-items: center;
+    background-color: #834cef;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-}
+
 .button{
     background-color: #42d27e;
     padding: 10px 40px 10px 40px;
@@ -63,15 +56,25 @@ form{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
+    margin-top: 10px; 
 }
 
 .efeito:hover {
     transform: scale(1.2);
 }
 
-.inputCustom{
-    padding: 5px 10px 5px 10px;
-    border-radius: 10px;
+.inputLarguraMax{
+    width: 50dvh;
+    border-radius: 2px !important;
     border: none;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
+}
+.inputLarguraMin{
+    width: 7dvh;
+    border-radius: 2px !important;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
 }
