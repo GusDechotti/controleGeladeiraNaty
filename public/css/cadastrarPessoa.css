@@ -8,7 +8,12 @@ body {
     justify-content: center;
     height: 100vh;
 }
-
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
 .container {
     display: flex;
     background-color: #444;
@@ -36,6 +41,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .form-container h1 {
@@ -80,28 +86,57 @@ body {
     background-color: #ddd;
 }
 
-.efeito {
-    padding: 1px 5px;
-    font-size: 16px;
-    background-color: #7242d2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.efeito:hover {
-    transform: scale(1.2);
-}
-
 .checkboxForm {
     display: flex;
     flex-direction: row;
-    margin: 10px 0;
 }
 
 input[type="checkbox"] {
     transform: scale(1.5);
     /* Aumenta o tamanho em 1.5 vezes */
 }
+
+input {
+    background-color: #d1d1d1;
+    color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input:hover {
+    background-color: #27ff8894;
+}
+
+button {
+    background-color: #4CAF50;
+    /* Cor de fundo */
+    border: none;
+    /* Sem borda */
+    color: white;
+    /* Cor do texto */
+    padding: 15px 32px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinhamento do texto */
+    text-decoration: none;
+    /* Remove sublinhado */
+    display: inline-block;
+    /* Exibe como bloco inline */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    cursor: pointer;
+    /* Muda cursor para mãozinha */
+    transition: background-color 0.3s ease;
+    /* Animação de transição */
+    width: 140px;
+}
+
+.button:hover {
+    background-color: #45a049;
+    /* Muda cor ao passar o mouse */
+}
+
