@@ -1,6 +1,7 @@
 body{
     padding: 0;
     margin: 0;
+    height: 100dvh;
     background-color: #8C52FF;
     display: flex;
     justify-content: center;
@@ -11,9 +12,11 @@ body{
     
 }
 .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 500px;
     margin-top: 50px;
-    
 }
 .texto{
     flex: 2;

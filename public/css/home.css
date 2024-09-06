@@ -13,13 +13,13 @@ body {
     align-items: center;
     justify-content: center;
     height: 700px;
-    background-color: #311641;
+    background-color: #8C52FF;
     color: #6243E9;
 }
 
 h2 {
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 30px; 
 }
 
 #button-container {
@@ -44,6 +44,7 @@ button:hover {
 img {
     max-width: 100px;
     margin-bottom: 20px;
+    border-radius: 50px;
 }
 
 @media (max-width: 600px) {
