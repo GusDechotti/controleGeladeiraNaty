@@ -27,7 +27,7 @@ module.exports = app => {
         .delete(produtoController.delete)
         .get(produtoController.readById)
 
-    app.route('/api/produtos/todos')
+    app.route('/api/produtos')
         .get(produtoController.readAll)
 
     //Pedidos

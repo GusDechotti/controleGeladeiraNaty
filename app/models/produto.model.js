@@ -13,16 +13,6 @@ exports.create = async (date) => {
   }
 };
 
-exports.readAll = async () => {
-  const connection = await pool.getConnection();
-  try {
-    const [rows] = await connection.query(`SELECT * FROM Produto ORDER BY nome`);
-    return rows;
-  } finally {
-    connection.release();
-  }
-};
-
 exports.read = async () => {
   const connection = await pool.getConnection();
   try{
@@ -31,7 +21,17 @@ exports.read = async () => {
   } finally{
     connection.release();
   }
-}
+};
+
+exports.readAll = async () => {
+  const connection = await pool.getConnection();
+  try{
+    const [rows] = await connection.query('SELECT * FROM Produto ORDER BY nome');
+    return rows;
+  } finally{
+    connection.release();
+  }
+};
 
 exports.update = async (id, date) => {
   const connection = await pool.getConnection();

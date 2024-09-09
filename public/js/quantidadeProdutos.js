@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/api/produto';
+const apiUrl = 'http://localhost:3000/api/produtos';
 
 async function addBtnProduto() {
     try {

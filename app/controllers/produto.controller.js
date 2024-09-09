@@ -15,6 +15,11 @@ exports.read = async(req, res) => {
     res.status(200).send(produto)
 }
 
+exports.readAll = async(req, res) => {
+    const produto = await Produto.readAll();
+    res.status(200).send(produto)
+}
+
 exports.update = async(req, res) => {
     const produto = await Produto.update(req.params.id, req.body)
 
@@ -38,10 +43,5 @@ exports.delete = async (req, res) => {
 
 exports.readById = async(req, res) => {
     const produto = await Produto.readById(req.params.id)
-    res.status(200).send(produto)
-}
-
-exports.readAll = async (req,res) => {
-    const produto = await Produto.realAll()
     res.status(200).send(produto)
 }
