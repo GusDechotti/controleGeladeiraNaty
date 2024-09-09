@@ -35,9 +35,7 @@ label[for="isPix"] {
 }
 
 /* Div do botão */
-#btnProduto {
-    margin-top: 30px;
-}
+
 
 /* Exemplo de botão para o produto */
 #btnProduto button {
@@ -70,6 +68,7 @@ label[for="isPix"] {
         padding: 15px 0;
     }
 }
+
 
 /* From Uiverse.io by Shoh2008 */ 
 .checkbox-wrapper-4 * {
@@ -104,8 +103,8 @@ label[for="isPix"] {
   
   .checkbox-wrapper-4 .cbx span:first-child {
     position: relative;
-    width: 18px;
-    height: 18px;
+    width: 50px;
+    height: 50px;
     border-radius: 4px;
     transform: scale(1);
     border: 1px solid #cccfdb;
@@ -161,6 +160,10 @@ label[for="isPix"] {
     user-select: none;
   }
   
+  .spanSize{
+    font-size: 30px !important;
+  }
+
   @media screen and (max-width: 640px) {
     .checkbox-wrapper-4 .cbx {
       width: 100%;
