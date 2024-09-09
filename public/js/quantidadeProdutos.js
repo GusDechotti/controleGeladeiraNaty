@@ -25,7 +25,7 @@ async function addBtnProduto() {
             img.src = item.imagem;
             img.alt = item.nome;
             img.style.width = 'auto';
-            img.style.height = '100px';
+            img.style.height = '70px';
             var text = document.createTextNode(item.nome);
             var qtd = document.createTextNode(`Quantidade atual: ${item.quantidade}`);
             form.appendChild(ipt);
