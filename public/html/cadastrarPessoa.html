@@ -22,13 +22,15 @@
                 </div>
                 <div class="form-group">
                     <label for="telefone">Número de Telefone</label>
-                    <input type="text" id="telefone" placeholder="554521037110" name="telefone" minlength="11" required>
+                    <input type="tell" id="telefone" placeholder="5544900000000" pattern="55\d{2}9\d{4}\d{4}" title="Formato esperado: 5544900000000" name="telefone" minlength="11" required>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="isNaty" name="isNaty">
-                    <label for="isNaty">Trabalha na Naty</label>
-                    <input class="efeito" type="submit" value="Adicionar" id="submit">
+                    <div class="checkboxForm">
+                        <input class="checkboxDesign" type="checkbox" id="isNaty" name="isNaty">
+                        <label for="isNaty">Trabalha na Naty</label>
+                    </div>  
                 </div>
+                <button class="button" type="submit" value="Adicionar" id="submit">Adicionar</button>   
             </form>
         </div>
     </div>
