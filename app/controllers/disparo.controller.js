@@ -25,7 +25,7 @@ exports.compra = async (req, res) => {
             }
         ]
     };
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJjcmVhdGU6bWVzc2FnZXMiLCJjcmVhdGU6bWVkaWFzIiwicmVhZDp3aGF0c2FwcHMiLCJ1cGRhdGU6d2hhdHNhcHBzIiwicmVhZDpjYW1wYWlnbnMiLCJtYW5hZ2U6Y2FtcGFpZ25zIiwicmVhZDpjaGFubmVscyIsInJlYWQ6cXVldWVzIiwicmVhZDp1c2VycyJdLCJjb21wYW55SWQiOiJmZjQ1M2JlOS05MmM3LTRlZWUtYjYxNS04ZjE4OTAxMzE4NGEiLCJpYXQiOjE3MjUzMDkxNjZ9.wawDXjc4WaZyMLLtq9Of4p7s8cI3uiMMZrbDq5Z7X_0';
+    const token = process.env.API_NATY;
     axios.post(url, data, {
         headers: {
             'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ exports.compraPix = async (req, res) => {
             }
         ]
     };
-    const token = process.env.API.NATY;
+    const token = process.env.API_NATY;
     axios.post(url, data, {
         headers: {
             'Content-Type': 'application/json',
