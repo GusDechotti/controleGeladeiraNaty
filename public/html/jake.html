@@ -8,35 +8,41 @@
     <title>Painel da Jake</title>
     <link rel="shortcut icon" href="../src/naty-icon.ico" type="image/x-icon">
     <link rel="icon" type="image/x-icon" href="https://beta.naty.app/static/media/naty-icon.f531dada323cbd4a921c.png">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
-    <input type="checkbox" name="isPix" id="isPix">
-    <label for="isPix">Exibir os pagos pelo pix</label>
-    <input type="checkbox" name="isNaty" id="isNaty">
-    <label for="isNaty">Exibir os patrocinados pela Naty</label>
-    <button>Aplicar filtros</button>
-    <button onclick="cadastrarProduto()">Cadastrar novo produto</button><br>
     <p>Todos os pedidos:</p>
-    <table border="2" id="tabela-container">
-        <tr>
-            <th>Nome da Pessoa</th>
-            <th>Nome do Produto</th>
-            <th>Pix</th>
-            <th>Data</th>
-        </tr>
+    <table border="2" id="tabela-container" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nome da Pessoa</th>
+                <th>Nome do Produto</th>
+                <th>Pix</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
     </table>
     <button onclick="limpar()">Limpar histórico</button>
     <script src="/js/jake.js"></script>
     <br><br>
     <p>Pedidos por pessoa:</p>
-    <table border="2" id="media">
-        <tr>
-            <th>Nome da pessoa</th>
-            <th>Quantidade de pedidos</th>
-        </tr>
+    <table border="2" id="media" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nome da pessoa</th>
+                <th>Quantidade de pedidos</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
     </table>
     <button onclick="alterarQuantidade()">Alterar quantidade de produtos</button>
+    <button onclick="cadastrarProduto()">Cadastrar novo produto</button><br>
 </body>
 
 </html>

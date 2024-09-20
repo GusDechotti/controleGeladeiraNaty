@@ -3,72 +3,74 @@ function cadastrarProduto() {
   window.location.href = newUrl;
 }
 
-function alterarQuantidade(){
+function alterarQuantidade() {
   const newUrl = `/html/quantidadeProdutos.html`;
   window.location.href = newUrl;
 }
 
-var Pix = document.getElementById("isPix");
-var isPix = Pix.checked;
-
 async function exibePedidos() {
-  const apiUrl = 'http://localhost:3000/api/pedido';
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    const container = document.getElementById('tabela-container');
-    data.forEach(item => {
-      console.log(item)
-
-      const tr = document.createElement('tr');
-      tr.setAttribute('id', item.pedidoId)
-      container.appendChild(tr);
-      const tdNome = document.createElement('td');
-      tdNome.textContent = item.nomePessoa
-      const onde = document.getElementById(item.pedidoId)
-      onde.appendChild(tdNome)
-      const tdProduto = document.createElement('td');
-      tdProduto.textContent = item.nomeProduto
-      onde.appendChild(tdProduto)
-      const tdPix = document.createElement('td');
-      if(item.isPix){
-        tdPix.textContent = `X`;
-      }else{
-        tdPix.textContent = ``;
-      }
-      onde.appendChild(tdPix);
-      const tdData = document.createElement('td');
-      tdData.textContent = new Date(item.dia).toLocaleDateString('pt-BR');
-      onde.appendChild(tdData);
-    });
-  } catch (error) {
-    console.error('Ocorreu um erro:', error);
-  }
-  const URLDetalhes = 'http://localhost:3000/api/pessoas/detalhes';
-  try {
-    const response = await fetch(URLDetalhes);
-    const data = await response.json();
-    const container = document.getElementById('media');
-    data.forEach(item => {
-      console.log(item)
-
-      const tr = document.createElement('tr');
-      tr.setAttribute('id', item.Id + 'pessoa');
-      container.appendChild(tr);;
-      const tdNome = document.createElement('td');;
-      tdNome.textContent = item.nome;
-      const lugar = document.getElementById(item.Id + 'pessoa');
-      lugar.appendChild(tdNome);
-      const tdProduto = document.createElement('td');
-      tdProduto.textContent = item.total_pedidos;
-      lugar.appendChild(tdProduto);
-    });
-  } catch (error) {
-    console.error('Ocorreu um erro:', error);
-  }
+  $.ajax({
+    url: 'http://localhost:3000/api/pedido',
+    method: 'GET',
+    success: function (data) {
+      let tabela = $('#tabela-container tbody');
+      tabela.empty(); 
+      data.forEach(function (item) {
+        let row = `<tr>
+                <td>${item.nomePessoa}</td>
+                <td>${item.nomeProduto}</td>
+                <td>${item.isPix ? 'X' : ''}</td>
+                <td>${new Date(item.dia).toLocaleDateString('pt-BR')}</td>
+            </tr>`;
+        tabela.append(row);
+      });
+      $('#tabela-container').DataTable({
+        destroy: true, 
+        paging: true,
+        searching: true,
+        ordering: true,
+        pageLength: 5,
+        language: {
+          url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json' 
+        }
+      });
+    },
+    error: function (error) {
+      console.error("Erro ao carregar os dados:", error);
+    }
+  });
 }
 
 exibePedidos()
+
+$.ajax({
+  url: 'http://localhost:3000/api/pessoas/detalhes',
+  method: 'GET',
+  success: function (data) {
+    let tabela = $('#media tbody');
+    tabela.empty();
+    data.forEach(function (item) {
+      let row = `<tr>
+              <td>${item.nome}</td>
+              <td>${item.total_pedidos}</td>
+          </tr>`;
+      tabela.append(row);
+    });
+    $('#media').DataTable({
+      destroy: true,
+      paging: true,
+      searching: true,
+      ordering: true,
+      pageLength: 5,
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json'
+      }
+    });
+  },
+  error: function (error) {
+    console.error("Erro ao carregar os dados:", error);
+  }
+});
 
 async function limpar() {
   if (window.confirm("Isso vai apagar todas as compras, tem certeza?")) {
