@@ -60,11 +60,18 @@ exports.compraPix = async (req, res) => {
         "whatsappId": "44c248fa-a49f-4c5e-9871-99f46e3341f9",
         "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
+        "minMsgInterval":500,
+        "maxMsgInterval":1000,
         "messages": [
             {
                 "number": pessoaTelefone,
                 "name": pessoaNome,
-                "body": "Olá " + pessoaNome + " você pegou um " + produtoNome + " na geladeira\nComo seu pedido está marcado para 'PIX' envie o valor de R$" + produtoValor + " para o pix: 48055059000103 e depois envie o comprovante."
+                "body": "Olá " + pessoaNome + " você pegou um " + produtoNome + " na geladeira\nComo seu pedido está marcado para 'PIX' envie o valor de R$" + produtoValor + " para o pix na mensagem abaixo e depois envie o comprovante."
+            },
+            {
+                "number": pessoaTelefone,
+                "name": pessoaNome,
+                "body": "48055059000103"
             }
         ]
     };
@@ -84,3 +91,4 @@ exports.compraPix = async (req, res) => {
             connection.release();
         });
 }
+
