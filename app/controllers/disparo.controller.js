@@ -16,6 +16,7 @@ exports.compra = async (req, res) => {
     const data = {
         "name": "Compra na geladeira",
         "whatsappId": "44c248fa-a49f-4c5e-9871-99f46e3341f9",
+        "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
         "messages": [
             {
@@ -57,6 +58,7 @@ exports.compraPix = async (req, res) => {
     const data = {
         "name": "Compra na geladeira",
         "whatsappId": "44c248fa-a49f-4c5e-9871-99f46e3341f9",
+        "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
         "messages": [
             {
