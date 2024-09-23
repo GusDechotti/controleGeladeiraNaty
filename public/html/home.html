@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geladeira</title>
     <link rel="shortcut icon" href="../src/naty-icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/home.css">
-    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <script src="../js/users.js" defer></script>
+    <script src="../js/home.js" defer></script>
 </head>
 <body>
-    <img src="../src/iconNaty.jpeg" alt="Logo">
-    <h2>Selecione seu usuário</h2>
-    <div class="usuariosDiv" id="button-container"></div>
-    <button onclick="pgCriar()">Cadastrar pessoa</button>
-    <button onclick="paginaJake()">Painel Jake</button>
+
+    <div id="myDrawer" class="drawer">
+        <img src="../src/bigIcon.png" alt="Logo" class="logo">
+        <div class="drawer-btn-container">
+            <button class="drawer-btn">Tela Inicial</button>
+            <button class="drawer-btn">Geladeira</button>
+            <button onclick="paginaJake()" class="drawer-btn">Painel Admin</button>
+        </div>
+    </div>    
+
+    <div class="navbar">
+        <button id="drawer-toggle-btn" class="open-drawer-btn" onclick="toggleDrawer()">☰</button>
+        <div id="clock" class="clock"></div>
+    </div>
+
+    <div class="content" id="mainContent">
+        <div class="user-container">
+            <div class="usuariosDiv" id="button-container">
+            </div>
+            <div class="button-wrapper">
+                <button onclick="pgCriar()" class="register-button">Cadastrar Usuário</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

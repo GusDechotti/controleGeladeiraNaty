@@ -1,0 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+:root{
+
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --purple: rgb(113, 66, 234);
+  --naty: rgb(109, 63, 235);
+  --dark-purple: rgb(84, 48, 192);
+
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-30: 1.875rem;
+  --fs-38: 2.375rem;
+  --fs-40: 2.5rem;
+  --fs-48: 3rem;
+}
