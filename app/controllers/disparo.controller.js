@@ -22,7 +22,7 @@ exports.compra = async (req, res) => {
             {
                 "number": pessoaTelefone,
                 "name": pessoaNome,
-                "body": "Olá " + pessoaNome + " você pegou um " + produtoNome + " na geladeira"
+                "body": "{{greeting}} *" + pessoaNome + "*! \nSeu pedido de um *" + produtoNome + "* ja foi computado na geladeira."
             }
         ]
     };
@@ -66,7 +66,7 @@ exports.compraPix = async (req, res) => {
             {
                 "number": pessoaTelefone,
                 "name": pessoaNome,
-                "body": "Olá " + pessoaNome + " você pegou um " + produtoNome + " na geladeira\nComo seu pedido está marcado para 'PIX' envie o valor de R$" + produtoValor + " para o pix na mensagem abaixo e depois envie o comprovante."
+                "body": "{{greeting}} *" + pessoaNome + "*! Seu pedido de um *" + produtoNome + "* ja foi computado na geladeira\n\nComo seu pedido está marcado para *'PIX'* envie o valor de *R$" + produtoValor + "* para o pix na mensagem abaixo, depois envie o comprovante nesse mesmo numero."
             },
             {
                 "number": pessoaTelefone,
