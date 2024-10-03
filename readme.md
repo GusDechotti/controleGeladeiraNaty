@@ -1,6 +1,17 @@
-Será preciso iniciar o node com `npm i` <br>
-Faça as alterações necessárias na pasta "database.js"<br>
-Rode tudo com `npm start`<br>
+#Controle Geladeira Naty
+
+Crie um arquivo .env no diretorio principal
+```js
+PROVEDOR='db',
+SENHA_BANCO='root',
+API_NATY=
+```
+
+Para rodar use o docker compose
+
+```docker
+docker-compose up --biuld
+```
 
 
 O Fontend vai rodar na porta 3001 <br>
