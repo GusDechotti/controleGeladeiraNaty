@@ -5,6 +5,10 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
+document.getElementById('btn-voltar').addEventListener('click', function() {
+    window.history.back('/');
+});
+
    
 console.log(isPix)
 
@@ -27,7 +31,7 @@ async function addBtnProduto() {
             btn.appendChild(img);
             btn.appendChild(br);
             btn.appendChild(text);
-            btn.createElement
+            btn.createElement;
             var Pix = document.getElementById("isPix");
             Pix.addEventListener('change', function() {
                 console.log('Checkbox foi clicado! Estado atual:', Pix.checked);
