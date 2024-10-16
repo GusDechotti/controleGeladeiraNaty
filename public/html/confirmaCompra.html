@@ -6,29 +6,27 @@
     <link rel="shortcut icon" href="../src/naty-icon.ico" type="image/x-icon">
     <title>Confirmação</title>
     <link rel="stylesheet" href="../css/telaFinalCompra.css">
-    <script>
-        function voltar(){
-            const newUrl = `/`;
-            window.location.href = newUrl;
-        }
-    </script>
 </head>
 <body>
-    <div class="divConteiner">
-        <div class="logo">
-            <img src="../src/natyPersonaLogo.png" width="350px" alt="">
-        </div>
-        <div class="texto">
-            <div class="divStyle">
-                <h1>
-                    Obrigado pela compra!!!
-                </h1>
-                <h2>
-                    Verifique o seu WhatsApp
-                </h2>
-                <button class="button, efeito" onclick="voltar()">Voltar</button>
+    <div class="central">
+        <div class="divGap">
+            <div>
+                <img src="../src/confirmImagem.svg" alt="">
+            </div>
+            <div class="divH1">
+                <h1>Compra realizada</h1>
+            </div>
+            <div class="divH2">
+                <h2>Verifique seu <span>WhatsApp</span></h2>
             </div>
         </div>
+        <div class="pressEnter">
+            <h2 class="piscando">
+                Precione ENTER para sair
+            </h2>
+        </div>
     </div>
+
+    <script src="../js/voltarHomepage.js"></script>
 </body>
 </html>

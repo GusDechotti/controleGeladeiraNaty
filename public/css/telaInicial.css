@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(226, 226, 226);
+    background-color: #333333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    background-color: var(--dark-purple);
+    background-color: #252525;
     color: white;
     padding: 10px;
     position: fixed;
@@ -66,7 +66,7 @@ body {
 }
 
 .drawer-btn:hover {
-    background-color: #6243E9;
+    background-color: #252525;
 }
 
 .content {
@@ -144,6 +144,15 @@ body {
     border-radius: 5px;
     padding: 5px 10px;
     margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:visited{
+    color: white;
 }
 
 @media (max-width: 600px) {

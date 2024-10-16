@@ -2,18 +2,20 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #333;
-    color: #fff;
+    color: #333333;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
+
 .container {
     display: flex;
     background-color: #444;
@@ -22,48 +24,29 @@ form{
     overflow: hidden;
 }
 
-.logo {
-    background-color: #333;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo img {
-    width: 400px;
-    height: auto;
-}
-
 .form-container {
-    background-color: #5a2ec8;
-    padding: 150px;
+    background-color: #D9D9D9;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 80dvh;
+    width: 80dvh;
+    gap: 10px;
 }
 
 .form-container h1 {
-    margin-bottom: 20px;
     font-size: 24px;
-    text-align: center;
 }
 
-.form-group {
-    margin-bottom: 25px;
-    margin-left: 100px;
-    margin-right: 147px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
+.form-group{
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group input {
-    width: 132%;
+    width: 30dvh;
     padding: 10px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
@@ -97,12 +80,12 @@ input[type="checkbox"] {
 }
 
 input {
-    background-color: #d1d1d1;
+    background-color: #333333;
     color: #333;
     border: none;
-    padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+
 }
 
 input:hover {
@@ -110,7 +93,7 @@ input:hover {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #333333;
     /* Cor de fundo */
     border: none;
     /* Sem borda */
@@ -136,7 +119,84 @@ button {
 }
 
 .button:hover {
-    background-color: #45a049;
+    background-color: #434343;
     /* Muda cor ao passar o mouse */
 }
 
+
+
+.checkbox-wrapper-65 *,
+.checkbox-wrapper-65 ::after,
+.checkbox-wrapper-65 ::before {
+    box-sizing: border-box;
+}
+
+.checkbox-wrapper-65 .cbx {
+    position: relative;
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: #606062;
+    background-image: linear-gradient(#474749, #606062);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+    transition: all 0.15s ease;
+}
+
+.checkbox-wrapper-65 .cbx svg {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 17;
+    stroke-dashoffset: 17;
+    transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-65 .cbx+span {
+    float: left;
+    margin-left: 6px;
+}
+
+.checkbox-wrapper-65 {
+    user-select: none;
+}
+
+.checkbox-wrapper-65 label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.checkbox-wrapper-65 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+.checkbox-wrapper-65 input[type="checkbox"]:checked+.cbx {
+    background-color: #606062;
+    background-image: linear-gradient(#255cd2, #1d52c1);
+}
+
+.checkbox-wrapper-65 input[type="checkbox"]:checked+.cbx svg {
+    stroke-dashoffset: 0;
+    transition: all 0.15s ease;
+}
+
+.checkbox-wrapper-65{
+    margin: 10px;
+}
+
+.div-voltar {
+    width: 100%;
+    margin-bottom: 15%;
+    display: flex;
+}
+
+.voltar{
+    margin: 2%;
+}

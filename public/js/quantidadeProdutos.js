@@ -80,9 +80,8 @@ async function atualizaApi(id){
       
 }
 
-function voltar(){
-    const newUrl = `/`;
-    window.location.href = newUrl;
+function redirecionar() {
+  window.location.href = "../html/jake.html"; // Substitua pelo nome do seu arquivo HTML
 }
 
 addBtnProduto();

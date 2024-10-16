@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geladeira</title>
-    <link rel="shortcut icon" href="../src/naty-icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <script src="../js/users.js" defer></script>
-    <script src="../js/home.js" defer></script>
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
+
 <body>
-
-    <div id="myDrawer" class="drawer">
-        <img src="../src/bigIcon.png" alt="Logo" class="logo">
-        <div class="drawer-btn-container">
-            <button class="drawer-btn">Tela Inicial</button>
-            <button class="drawer-btn">Geladeira</button>
-            <button onclick="paginaJake()" class="drawer-btn">Painel Admin</button>
-        </div>
-    </div>    
-
-    <div class="navbar">
-        <button id="drawer-toggle-btn" class="open-drawer-btn" onclick="toggleDrawer()">☰</button>
-        <div id="clock" class="clock"></div>
+    <div class="imgCentral">
+        <img src="../src/download__1_-removebg-preview-Photoroom-removebg-preview 1.svg" alt="">
+    </div>
+    <div>
+        <h2 class="piscando">
+            Precione ENTER para iniciar
+        </h2>
     </div>
 
-    <div class="content" id="mainContent">
-        <div class="user-container">
-            <div class="usuariosDiv" id="button-container">
-            </div>
-            <div class="button-wrapper">
-                <button onclick="pgCriar()" class="register-button">Cadastrar Usuário</button>
-            </div>
-        </div>
-    </div>
+    <script src="../js/entrarHomePage.js"></script>
 </body>
+
 </html>

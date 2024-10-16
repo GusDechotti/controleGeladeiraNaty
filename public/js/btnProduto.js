@@ -5,11 +5,6 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
-document.getElementById('btn-voltar').addEventListener('click', function() {
-    window.history.back('/');
-});
-
-   
 console.log(isPix)
 
 async function addBtnProduto() {
@@ -63,7 +58,7 @@ async function addBtnProduto() {
                         return response.json();
                     })
                     .then(data => {
-                        const newUrl = `/html/confirmaCompra.html`;
+                        const newUrl = `/html/pagarComPix.html`;
                         window.location.href = newUrl;
                     })
                     .catch(error => {

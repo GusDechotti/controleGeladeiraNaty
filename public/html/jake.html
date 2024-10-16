@@ -14,6 +14,26 @@
 </head>
 
 <body>
+    <div class="div-voltar">
+        <div class="icon1">
+            <a href="../html/telaInicial.html" class="voltar">
+                <img src="../src/Arrow 3.svg" alt="">
+            </a>
+        </div>
+        <div class="iconsDireita">
+            <div class="icon2">
+                <a href="#" onclick="alterarQuantidade(this)">
+                    <img src="../src/🦆 icon _pencil_.svg" alt="" id="">
+                </a>
+            </div>
+            <div class="icon3">
+                <a href="#" onclick="cadastrarProduto(this)">
+                    <img src="../src/🦆 icon _plus_.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    
     <p>Todos os pedidos:</p>
     <table border="2" id="tabela-container" class="display" style="width:100%">
         <thead>
@@ -41,8 +61,6 @@
         <tbody>
         </tbody>
     </table>
-    <button onclick="alterarQuantidade()">Alterar quantidade de produtos</button>
-    <button onclick="cadastrarProduto()">Cadastrar novo produto</button><br>
 </body>
 
 </html>

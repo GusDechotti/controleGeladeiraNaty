@@ -19,7 +19,7 @@ document.getElementById('campos').addEventListener('submit', async function (eve
         if (response.ok) {
             const result = await response.json();
             window.alert("O produto " + formData.get('nome') + " foi criado com sucesso!")
-            const newUrl = `/`;
+            const newUrl = `../html/jake.html`;
             window.location.href = newUrl;
         } else {
             console.error('Erro:', response.statusText);
