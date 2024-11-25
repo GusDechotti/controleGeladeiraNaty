@@ -2,8 +2,8 @@
 
 Crie um arquivo .env no diretorio principal
 ```js
-PROVEDOR='db',
-SENHA_BANCO='root',
+PROVEDOR=db
+SENHA_BANCO=root
 API_NATY=
 ```
 
