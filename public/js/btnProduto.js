@@ -32,7 +32,7 @@ async function addBtnProduto() {
                 console.log('Checkbox foi clicado! Estado atual:', Pix.checked);
             });
             btn.addEventListener('click', () => {
-                const newUrl = `/html/pagarComPix.html?idPessoa=${getQueryParam("id")}&idProduto${item.id}`;
+                const newUrl = `/html/pagarComPix.html?idPessoa=${getQueryParam("id")}&idProduto=${item.id}`;
                 window.location.href = newUrl;
             });
             if(item.quantidade >= 0){
