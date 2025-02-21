@@ -8,6 +8,9 @@ exports.create = async (date) => {
                                                                                                                   date.preco, 
                                                                                                                   date.imagem]);
     return rows.affectedRows;
+  } catch (error) {
+    console.error('Erro ao executar a consulta:', error);
+    throw new Error('Erro ao buscar os dados no banco de dados');
   } finally {
     connection.release();
   }
@@ -18,6 +21,9 @@ exports.read = async () => {
   try{
     const [rows] = await connection.query('SELECT * FROM Produto WHERE quantidade > 0 ORDER BY nome');
     return rows;
+  } catch (error) {
+    console.error('Erro ao executar a consulta:', error);
+    throw new Error('Erro ao buscar os dados no banco de dados');
   } finally{
     connection.release();
   }
@@ -28,6 +34,9 @@ exports.readAll = async () => {
   try{
     const [rows] = await connection.query('SELECT * FROM Produto ORDER BY nome');
     return rows;
+  } catch (error) {
+    console.error('Erro ao executar a consulta:', error);
+    throw new Error('Erro ao buscar os dados no banco de dados');
   } finally{
     connection.release();
   }
@@ -38,6 +47,9 @@ exports.update = async (id, date) => {
   try {
     const [rows] = await connection.query(`UPDATE Produto SET quantidade = ? WHERE id = ?`, [date.quantidade, id]);
     return rows.affectedRows;
+  } catch (error) {
+    console.error('Erro ao executar a consulta:', error);
+    throw new Error('Erro ao buscar os dados no banco de dados');
   } finally {
     connection.release();
   }
@@ -48,6 +60,9 @@ exports.delete = async (id) => {
   try {
     const [rows] = await connection.query(`DELETE FROM Produto WHERE id = ?`, [id]);
     return rows.affectedRows;
+  } catch (error) {
+    console.error('Erro ao executar a consulta:', error);
+    throw new Error('Erro ao buscar os dados no banco de dados');
   } finally {
     connection.release();
   }
@@ -58,6 +73,9 @@ exports.readById = async (id) => {
   try {
     const [rows] = await connection.query(`SELECT * FROM Produto WHERE id = ?`, [id]);
     return rows;
+  } catch (error) {
+    console.error('Erro ao executar a consulta:', error);
+    throw new Error('Erro ao buscar os dados no banco de dados');
   } finally {
     connection.release();
   }
