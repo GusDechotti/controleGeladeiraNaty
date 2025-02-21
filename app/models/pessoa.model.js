@@ -68,7 +68,7 @@ exports.readById = async (id) => {
 exports.readDetalhe = async () => {
   const connection = await pool.getConnection();
   try {
-    const [rows] = await connection.query(`SELECT Pessoa.Id, Pessoa.nome, COUNT(Pedido.id) AS total_pedidos FROM Pessoa LEFT JOIN Pedido ON Pessoa.id = Pedido.id_pessoa GROUP BY Pessoa.id, Pessoa.nome ORDER BY pessoa.nome`);
+    const [rows] = await connection.query(`SELECT Pessoa.Id, Pessoa.nome, COUNT(Pedido.id) AS total_pedidos FROM Pessoa LEFT JOIN Pedido ON Pessoa.id = Pedido.id_pessoa GROUP BY Pessoa.id, Pessoa.nome ORDER BY Pessoa.nome`);
     return rows;
   } catch (error) {
     console.error('Erro ao executar a consulta:', error);
