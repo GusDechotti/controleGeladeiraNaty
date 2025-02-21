@@ -17,7 +17,7 @@ exports.create = async (date) => {
 exports.read = async () => {
   const connection = await pool.getConnection();
   try {
-    const [rows] = await connection.query(`SELECT pedido.id as pedidoId, isPix, dia, pessoa.id as idPessoa, pessoa.nome as nomePessoa, produto.id as produtoId, produto.nome as nomeProduto FROM pedido JOIN pessoa ON pedido.id_pessoa = pessoa.id JOIN produto ON pedido.id_produto = produto.id;`);
+    const [rows] = await connection.query(`SELECT Pedido.id as pedidoId, isPix, dia, Pessoa.id as idPessoa, Pessoa.nome as nomePessoa, Produto.id as produtoId, Produto.nome as nomeProduto FROM Pedido JOIN Pessoa ON Pedido.id_pessoa = Pessoa.id JOIN Produto ON Pedido.id_produto = Produto.id;`);
     return rows;
   } catch (error) {
     console.error('Erro ao executar a consulta:', error);
