@@ -18,10 +18,10 @@ exports.compra = async (req, res) => {
         "whatsappId": "79dbc26f-a7bf-473f-8b6d-c27028b92f78",
         "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
-        "minMsgInterval": 1000,
-        "maxMsgInterval": 1000,
-        "minBatchDelay": 1000,
-        "maxBatchDelay": 1000,
+        "minMsgInterval": 100,
+        "maxMsgInterval": 101,
+        "minBatchDelay": 100,
+        "maxBatchDelay": 101,
         "messages": [
             {
                 "number": pessoaTelefone,
@@ -64,10 +64,10 @@ exports.compraPix = async (req, res) => {
         "whatsappId": "79dbc26f-a7bf-473f-8b6d-c27028b92f78",
         "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
-        "minMsgInterval": 1000,
-        "maxMsgInterval": 1000,
-        "minBatchDelay": 1000,
-        "maxBatchDelay": 1000,
+        "minMsgInterval": 100,
+        "maxMsgInterval": 101,
+        "minBatchDelay": 100,
+        "maxBatchDelay": 101,
         "messages": [
             {
                 "number": pessoaTelefone,
