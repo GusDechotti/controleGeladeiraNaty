@@ -12,12 +12,16 @@ exports.compra = async (req, res) => {
     const [rowsProduto] = await connection.query('SELECT * FROM Produto WHERE id = ?', [req.body.id_produto]);
     console.log(rowsProduto)
     const produtoNome = rowsProduto[0].nome;
-    const url = 'https://api.staging.naty.app/api/v2/campaigns/instantly';
+    const url = 'https://api.staging.naty.app/api/v2/campaigns';
     const data = {
         "name": "Compra na geladeira",
-        "whatsappId": "875dfec6-7ee3-4031-90e9-3041f1b6431c",
+        "whatsappId": "79dbc26f-a7bf-473f-8b6d-c27028b92f78",
         "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
+        "minMsgInterval": 1000,
+        "maxMsgInterval": 1000,
+        "minBatchDelay": 1000,
+        "maxBatchDelay": 1000,
         "messages": [
             {
                 "number": pessoaTelefone,
@@ -54,14 +58,16 @@ exports.compraPix = async (req, res) => {
     console.log(rowsProduto)
     const produtoNome = rowsProduto[0].nome;
     const produtoValor = rowsProduto[0].preco;
-    const url = 'https://api.staging.naty.app/api/v2/campaigns/instantly';
+    const url = 'https://api.staging.naty.app/api/v2/campaigns';
     const data = {
         "name": "Compra na geladeira",
-        "whatsappId": "875dfec6-7ee3-4031-90e9-3041f1b6431c",
+        "whatsappId": "79dbc26f-a7bf-473f-8b6d-c27028b92f78",
         "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
-        "minMsgInterval":500,
-        "maxMsgInterval":1000,
+        "minMsgInterval": 1000,
+        "maxMsgInterval": 1000,
+        "minBatchDelay": 1000,
+        "maxBatchDelay": 1000,
         "messages": [
             {
                 "number": pessoaTelefone,
