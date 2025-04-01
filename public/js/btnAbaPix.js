@@ -26,7 +26,7 @@ document.getElementById("btnNao").addEventListener("click", function () {
             return response.json();
         })
         .then(data => {
-            const newUrl = `/html/pagarComPix.html`;
+            const newUrl = `/html/conrado.html`;
             window.location.href = newUrl;
         })
         .catch(error => {
@@ -78,7 +78,7 @@ document.getElementById("btnSim").addEventListener("click", function () {
             return response.json();
         })
         .then(data => {
-            const newUrl = `/html/pagarComPix.html`;
+            const newUrl = `/html/conrado.html`;
             window.location.href = newUrl;
         })
         .catch(error => {
