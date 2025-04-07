@@ -15,7 +15,7 @@ exports.compra = async (req, res) => {
     const url = 'https://api.staging.naty.app/api/v2/campaigns';
     const data = {
         "name": "Compra na geladeira",
-        "whatsappId": "79dbc26f-a7bf-473f-8b6d-c27028b92f78",
+        "whatsappId": "ba1799e0-cd52-4685-8dab-124b7b0a2b97",
         "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
         "minMsgInterval": 100,
@@ -61,7 +61,7 @@ exports.compraPix = async (req, res) => {
     const url = 'https://api.staging.naty.app/api/v2/campaigns';
     const data = {
         "name": "Compra na geladeira",
-        "whatsappId": "79dbc26f-a7bf-473f-8b6d-c27028b92f78",
+        "whatsappId": "ba1799e0-cd52-4685-8dab-124b7b0a2b97",
         "queueId": "54c8bfd1-1c2d-4d41-95e8-6f5c2da484b5",
         "ticketStatus": "closed",
         "minMsgInterval": 100,
