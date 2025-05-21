@@ -3,106 +3,67 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
-document.getElementById("btnNao").addEventListener("click", function () {
+document.getElementById("btnNao").addEventListener("click", async function () {
     const urlPostBanco = 'http://localhost:3000/api/pedido';
-    var urlMandarMensagem = 'http://localhost:3000/api/disparoNaty/padrao'
+    const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty/padrao';
     const data = {
         "id_pessoa": getQueryParam("idPessoa"),
         "id_produto": getQueryParam("idProduto"),
         "isPix": false
     };
-    console.log(data)
-    fetch(urlPostBanco, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro na requisição');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const newUrl = `/html/conrado.html`;
-            window.location.href = newUrl;
-        })
-        .catch(error => {
-            console.error('Erro:', error);
+    console.log(data);
+    try {
+        const responseBanco = await fetch(urlPostBanco, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         });
-    fetch(urlMandarMensagem, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro na requisição');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const newUrl = `/html/confirmaCompra.html`;
-            window.location.href = newUrl;
-        })
-        .catch(error => {
-            console.error('Erro:', error);
+        if (!responseBanco.ok) throw new Error('Erro na requisição para pedido');
+        const responseMensagem = await fetch(urlMandarMensagem, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         });
-    window.location.href = "../html/confirmaCompra.html";
+        if (!responseMensagem.ok) throw new Error('Erro na requisição para disparo');
+        window.location.href = "../html/confirmaCompra.html";
+    } catch (error) {
+        console.error('Erro:', error);
+    }
 });
 
-document.getElementById("btnSim").addEventListener("click", function () {
+
+document.getElementById("btnSim").addEventListener("click", async function () {
     const urlPostBanco = 'http://localhost:3000/api/pedido';
-        var urlMandarMensagem = 'http://localhost:3000/api/disparoNaty/pix';
+    const urlMandarMensagem = 'http://localhost:3000/api/disparoNaty/pix';
     const data = {
         "id_pessoa": getQueryParam("idPessoa"),
         "id_produto": getQueryParam("idProduto"),
         "isPix": true
     };
-    console.log(data)
-    fetch(urlPostBanco, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro na requisição');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const newUrl = `/html/conrado.html`;
-            window.location.href = newUrl;
-        })
-        .catch(error => {
-            console.error('Erro:', error);
+    console.log(data);
+    try {
+        const responseBanco = await fetch(urlPostBanco, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         });
-    fetch(urlMandarMensagem, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro na requisição');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const newUrl = `/html/confirmaCompra.html`;
-            window.location.href = newUrl;
-        })
-        .catch(error => {
-            console.error('Erro:', error);
+        if (!responseBanco.ok) throw new Error('Erro na requisição para pedido');
+        const responseMensagem = await fetch(urlMandarMensagem, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         });
-    window.location.href = "../html/pixPage.html";
+        if (!responseMensagem.ok) throw new Error('Erro na requisição para disparo');
+        window.location.href = "../html/pixPage.html";
+    } catch (error) {
+        console.error('Erro:', error);
+    }
 });
